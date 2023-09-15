@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+        header {
+            background-image: url('Shreya b s.png'); 
+            background-size: cover; 
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+            font-size: 24px;
+        }
+        header h1 {
+            font-size: 36px;
+            margin: 0;
+        }
+        header p {
+            font-size: 18px;
+            margin-top: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+        }
+        h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+        
+        .section {
+            display: none;
+        }
+        
+        .active {
+            display: block;
+        }
+        .profile-image {
+            width: 250px;
+            height: 250px;
+            overflow: hidden;
+            border-radius: 50%; 
+            float: right;
+            margin-left: 20px;
+               margin-top:-40px;
+ 
+        }
+
+        .profile-image img {
+            width: 100%;
+            height:auto;
+        }
+        .skill-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .skill-list-item {
+            margin-bottom: 20px;
+        }
+       .skill-name {
+            font-weight: bold;
+        }
+        .skill-bar {
+            background-color: white;
+            height: 20px;
+            border-radius: 20px;
+            position: relative;
+        }
+      .skill-progress {
+            background-color: skyblue; 
+            height: 100%;
+            border-radius: 20px;
+            width: 0;
+            transition: width 1s ease-in-out;
+        }
+         .skill-text {
+            position: absolute;
+            top: 0;
+            right: 10px; 
+            line-height: 20px; 
+            font-size: 14px; 
+            color: black;
+           font-weight:bold; 
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <br><br>
+    </header>
+    <div class="container section active" id="about">
+        <h2>About Me</h2>
+        <div class="profile-image">
+            <img src="i.png" alt="Your Photo">
+        </div>
+        <p>
+            I am a passionate web developer with a good Knowledge of Coding. I love to create interactive and user-friendly websites that make a difference.
+            I am very interested in doing the projects based on webpage Development. Being a Good Software Developer is one of my dream with full Knowledge of technical aspects.
+        </p>
+    </div>
+    <div class="container section" id="education">
+        <h2>Education</h2>
+        <p>
+            <strong>Bachelor of Engineering in Information Science</strong><br>
+            Canara Engineering College<br>
+        </p>
+        <h2>Workshop Attended</h2>
+        <p>
+            <strong>"Devtown Backend Web Development"</strong><br>
+            Completed: July 2023<br><br>
+            <strong>"Coding Confidence"</strong><br>
+            Completed: August 2023<br>
+        </p>
+    </div>
+    <div class="container section" id="skills">
+        <h2>Skills</h2>
+        <ul class="skill-list">
+            <li class="skill-list-item">
+                <span class="skill-name">HTML</span>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="width: 60%;"></div>
+                    <div class="skill-text">60%</div> <!-- Add this line -->
+                </div>
+            </li>
+            <li class="skill-list-item">
+                <span class="skill-name">CSS</span>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="width: 50%;"></div>
+                    <div class="skill-text">50%</div> <!-- Add this line -->
+                </div>
+            </li>
+            <li class="skill-list-item">
+                <span class="skill-name">JavaScript</span>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="width: 30%;"></div>
+                    <div class="skill-text">30%</div> <!-- Add this line -->
+                </div>
+            </li>
+            <li class="skill-list-item">
+                <span class="skill-name">Python</span>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="width: 45%;"></div>
+                    <div class="skill-text">45%</div> <!-- Add this line -->
+                </div>
+            </li>
+            
+        </ul>
+    </div>
+    <script>
+        var sections = document.querySelectorAll('.section');
+        var currentIndex = 0;
+           function showNextSection() {
+            sections[currentIndex].classList.remove('active'); // Hide the current section
+            currentIndex++;
+
+            if (currentIndex >= sections.length) {
+                currentIndex = 0; // Reset to the beginning
+            }
+
+            sections[currentIndex].classList.add('active'); // Display the next section
+        }
+
+        sections[currentIndex].classList.add('active');
+       setInterval(showNextSection, 5000);
+    </script>
+</body>
+</html>
